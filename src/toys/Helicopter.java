@@ -1,10 +1,10 @@
 package toys;
 
-public class Car {
+public class Helicopter {
     private final Integer SerialNumber;
-    private final String type = "car";
+    private final String type = "helicopter";
 
-    public Car(Integer SerialNumber) {
+    public Helicopter(Integer SerialNumber) {
         this.SerialNumber = SerialNumber;
     }
     
