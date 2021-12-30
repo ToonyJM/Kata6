@@ -1,13 +1,17 @@
 package business;
 
 import toyproduct.Toy;
-import toyproduct.models.AmericanHelicopterToy;
-import toyproduct.models.AmericanCarToy;
-import toys.SerialNumberGenerator;
+import factories.ToyFactory;
 
-public abstract class ToyBusiness {
-    protected final SerialNumberGenerator generator = new SerialNumberGenerator();
+public class ToyBusiness {
+    private final ToyFactory toyFactory;
+
+    public ToyBusiness(ToyFactory toyFactory) {
+        this.toyFactory = toyFactory;
+    }
     
-    public abstract Toy createToy(String type);
+    public Toy produceToy(String type){
+        return this.toyFactory.produceToy(type);
+    }
     
 }
