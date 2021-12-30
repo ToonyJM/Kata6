@@ -5,15 +5,16 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import toyproduct.Toy;
 import business.ToyBusiness;
-import factories.regionalfactories.AmericanToyFactory;
-import factories.regionalfactories.AsianToyFactory;
+import factories.regionalfactories.AmericanCarToyFactory;
+import factories.regionalfactories.AsianHelicopterToyFactory;
 
 
 public class Kata6 {
 
     public static void main(String[] args) {
-        //ToyBusiness business = new ToyBusiness(new AmericanToyFactory());
-        ToyBusiness business = new ToyBusiness(new AsianToyFactory());
+        ToyBusiness business = new ToyBusiness();
+        business.add("car", new AmericanCarToyFactory());
+        business.add("helicopter", new AsianHelicopterToyFactory());
         ArrayList<Toy> toys = new ArrayList<>();
         
         Scanner in = new Scanner(System.in);
